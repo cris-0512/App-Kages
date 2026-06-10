@@ -1,4 +1,4 @@
-# Diseño del prototipo
+# Diseño del prototipo de la app escolar KAGES
 
 Este apartado contiene el enlace al diseño del prototipo mobile realizado en Figma.
 
