@@ -1,108 +1,186 @@
-# KAGES - Aplicacion Escolar
+<div align="center">
 
-KAGES es una aplicacion escolar enfocada en la gestion academica del alumno y en el seguimiento de procesos de desarrollo profesional, como servicio social o practicas profesionales. El proyecto surge como una alternativa de apoyo para que el estudiante pueda consultar sus materias, actividades, calificaciones, contenido academico y registros de horas desde una experiencia mas directa y organizada.
+# KAGES
+
+### Aplicación escolar para gestión académica y desarrollo profesional
+
+![Estado](https://img.shields.io/badge/estado-planeacion%20y%20analisis-2563eb)
+![Proyecto](https://img.shields.io/badge/proyecto-aplicacion%20escolar-16a34a)
+![Enfoque](https://img.shields.io/badge/enfoque-alumnos-f59e0b)
+
+KAGES busca concentrar en una sola experiencia la gestión de materias, actividades, calificaciones, contenido académico y seguimiento de servicio social o prácticas profesionales.
+
+</div>
+
+---
+
+## Tabla de contenido
+
+- [Objetivo general](#objetivo-general)
+- [Propósito del proyecto](#propósito-del-proyecto)
+- [Módulos principales](#módulos-principales)
+- [Flujo general de la aplicación](#flujo-general-de-la-aplicación)
+- [Desarrollo profesional](#desarrollo-profesional)
+- [Avance planeado](#avance-planeado)
+- [Estructura del repositorio](#estructura-del-repositorio)
+
+---
 
 ## Objetivo general
 
-Crear una aplicacion escolar de gestion para alumnos que permita centralizar informacion academica, administrar actividades por materia, consultar calificaciones de forma clara y dar seguimiento al desarrollo profesional mediante el registro diario de horas de servicio social o practicas profesionales.
+Crear una aplicación escolar de gestión para alumnos que permita centralizar información académica, administrar actividades por materia, consultar calificaciones de forma clara y dar seguimiento al desarrollo profesional mediante el registro diario de horas de servicio social o prácticas profesionales.
 
-## Proposito del proyecto
+## Propósito del proyecto
 
-El proposito de KAGES es mejorar la experiencia del alumno al consultar y gestionar informacion escolar importante. La aplicacion busca resolver problemas comunes como el acceso limitado desde un solo dispositivo, la poca claridad en la visualizacion de calificaciones, la falta de recordatorios para entregas y la dificultad para registrar horas de servicio social o practicas profesionales de manera constante.
+El propósito de KAGES es mejorar la experiencia del alumno al consultar y organizar información escolar importante. La aplicación busca atender problemas como:
 
-## Objetivos especificos
+| Necesidad detectada | Propuesta de KAGES |
+| --- | --- |
+| Acceso complicado cuando se requiere otro dispositivo para iniciar sesión | Acceso mediante correo institucional |
+| Dificultad para ubicar materias, actividades y recursos | Tablero de materias organizado por curso |
+| Calificaciones poco claras por porcentajes o ponderaciones | Visualización directa de puntos, décimos y calificación acumulada |
+| Olvido de fechas importantes de entrega | Notificaciones de alerta antes de entregas |
+| Registro confuso de horas de servicio o prácticas | Agenda y control diario de horas acumuladas |
 
-- Permitir el acceso del alumno mediante correo institucional.
-- Mostrar las materias asignadas del cuatrimestre actual en un tablero principal.
-- Organizar actividades academicas por curso y por tipo de entrega.
-- Incluir contenido academico descargable por unidades en formato PDF.
-- Facilitar la participacion en foros de autovaloracion publicados por el docente.
-- Enviar notificaciones de alerta antes de fechas importantes de entrega.
-- Mostrar calificaciones de forma directa, acumulada y comprensible para el alumno.
-- Administrar informacion basica del usuario, como nombre, carrera, matricula y fotografia.
-- Gestionar el registro diario de horas de servicio social o practicas profesionales.
-- Visualizar el avance de horas acumuladas mediante indicadores claros de progreso.
+---
 
-## Modulos principales
+## Módulos principales
 
-### Inicio de sesion
+| Módulo | Descripción | Resultado esperado |
+| --- | --- | --- |
+| Inicio de sesión | Acceso restringido con correo institucional | Entrada sencilla y enfocada al alumno |
+| Materias | Vista de las 5 materias del cuatrimestre actual | Consulta rápida de cursos y actividades |
+| Actividades | Actividades de aula, evaluación continua e integradoras | Organización clara de entregas |
+| Contenido académico | PDFs descargables por unidades | Material disponible para estudiar |
+| Foro | Preguntas publicadas por el docente y respuestas de alumnos | Participación académica dentro del curso |
+| Notificaciones | Alertas previas a fechas de entrega | Mejor cumplimiento en tiempo y forma |
+| Calificaciones | Consulta directa de resultados por curso | Menos confusión con ponderaciones |
+| Usuario | Perfil con foto, carrera, matrícula y cierre de sesión | Gestión básica de información personal |
+| Desarrollo profesional | Registro de servicio social o prácticas | Seguimiento de horas, sede y horarios |
 
-El acceso a la aplicacion se plantea mediante correo institucional. Esta restriccion busca ofrecer una entrada mas sencilla para el alumno, especialmente en casos donde el acceso a plataformas externas requiere escanear codigos QR desde otro dispositivo.
+---
 
-### Materias
+## Flujo general de la aplicación
 
-El tablero de materias mostrara los cinco cursos correspondientes al cuatrimestre actual. Cada materia contara con sus propias actividades, contenido academico y recursos asociados.
+```mermaid
+flowchart TD
+    A[Inicio de sesión con correo institucional] --> B[Dashboard principal]
+    B --> C[Materias del cuatrimestre]
+    B --> D[Panel lateral]
+    C --> E[Actividades del curso]
+    C --> F[Contenido académico en PDF]
+    C --> G[Foro de autovaloración]
+    D --> H[Calificaciones]
+    D --> I[Usuario]
+    D --> J[Desarrollo profesional]
+    J --> K[Encuesta inicial]
+    K --> L[Registro diario de horas]
+    L --> M[Seguimiento de avance]
+```
 
-Dentro de cada curso se contemplan las siguientes secciones:
+---
 
-- Actividades de aula: Actividad de Aula 1, Actividad de Aula 2 y Actividad Integradora.
-- Actividades de evaluacion continua: Actividad 1, Actividad 2 y Producto Final.
-- Contenido academico: materiales organizados por unidades y divididos en dos archivos PDF descargables.
-- Foro de autovaloracion participativa: espacio donde el docente publica preguntas y los alumnos pueden responder.
+## Materias y actividades
 
-### Notificaciones
+Cada materia contempla una organización académica por bloques:
 
-La aplicacion incluira alertas para recordar al alumno fechas proximas de entrega de actividades, productos finales u otros pendientes importantes. El objetivo es mejorar el cumplimiento en tiempo y forma y reducir olvidos durante el cuatrimestre.
+<details>
+<summary><strong>Actividades de aula</strong></summary>
 
-### Panel de navegacion lateral
+- Actividad de Aula 1
+- Actividad de Aula 2
+- Actividad Integradora
 
-KAGES contara con un panel lateral desplegable que permitira navegar entre las principales areas de la aplicacion:
+</details>
 
-- Calificaciones
-- Usuario
-- Desarrollo Profesional
+<details>
+<summary><strong>Actividades de evaluación continua</strong></summary>
 
-### Calificaciones
+- Actividad 1
+- Actividad 2
+- Producto Final
 
-El modulo de calificaciones mostrara los resultados obtenidos en cada curso de forma directa. La intencion es evitar que el alumno tenga que interpretar porcentajes o ponderaciones poco claras, mostrando desde el inicio los puntos o decimos acumulados y la calificacion total correspondiente.
+</details>
 
-### Usuario
+<details>
+<summary><strong>Contenido académico</strong></summary>
 
-El apartado de usuario permitira visualizar y configurar informacion personal basica:
+El contenido se organizará por unidades y se dividirá en dos archivos PDF descargables. Esto permite separar materias con varias unidades, por ejemplo, un primer PDF con 4 unidades y un segundo PDF con 3 unidades.
 
-- Fotografia de perfil
-- Nombre completo
-- Carrera
-- Matricula
-- Opcion para cerrar sesion
+</details>
 
-### Desarrollo profesional
+<details>
+<summary><strong>Foro de autovaloración participativa</strong></summary>
 
-Este modulo esta dirigido a la gestion de servicio social o practicas profesionales. Su objetivo es ayudar al alumno a registrar, consultar y controlar sus horas de asistencia.
+Espacio donde el docente podrá publicar preguntas y los alumnos podrán responder dentro del curso correspondiente.
 
-El flujo inicia con una encuesta para recopilar informacion necesaria:
+</details>
 
-- Tipo de proceso: servicio social o practicas profesionales.
-- Sede donde se realiza la prestacion de servicios.
-- Dias de asistencia.
-- Horario en el que el alumno asistira a la sede.
+---
 
-Posteriormente, la aplicacion mostrara tableros funcionales para registrar horas y consultar el avance acumulado.
+## Desarrollo profesional
 
-## Registro diario de horas
+El módulo de desarrollo profesional está pensado para alumnos que realizan servicio social o prácticas profesionales.
 
-El tablero de registro diario permitira capturar:
+### Encuesta inicial
 
-- Dia de la semana seleccionado por defecto.
-- Hora de inicio del servicio o practica.
-- Hora de fin del servicio o practica.
-- Total de horas acumuladas.
+Antes de registrar horas, el alumno responderá:
 
-## Seguimiento de avance
+1. Qué está cursando: servicio social o prácticas profesionales.
+2. Cuál es la sede donde realiza la prestación de servicios.
+3. Qué días de la semana asistirá.
+4. En qué horario asistirá a la sede.
 
-El tablero de seguimiento mostrara:
+### Registro diario de horas
 
-- Nombre de la sede seleccionada.
-- Horario fijo con opcion de modificacion.
-- Dias de la semana seleccionados por el usuario.
-- Horas acumuladas mediante una barra de progreso.
-- Total de horas registradas y meta total de horas a cumplir.
+| Campo | Función |
+| --- | --- |
+| Día de la semana | Se selecciona por defecto según el día actual |
+| Hora de inicio | Registra el comienzo del servicio o práctica |
+| Hora de fin | Registra la salida del alumno |
+| Horas acumuladas | Suma el avance diario al total general |
 
-## Alcance inicial
+### Seguimiento de avance
 
-En su primera etapa, KAGES se plantea como una aplicacion de funcionamiento local enfocada en organizar la informacion academica y profesional del alumno. El desarrollo priorizara la navegacion clara, el registro de informacion, la consulta de actividades y la visualizacion directa de calificaciones y horas acumuladas.
+El tablero de avance mostrará la sede, horario, días seleccionados y una barra de progreso con las horas acumuladas frente a la meta total.
+
+---
+
+## Avance planeado
+
+- [x] Planeación inicial del proyecto
+- [x] Definición del objetivo general
+- [x] Definición de módulos principales
+- [x] Organización del repositorio
+- [ ] Diseño de pantallas principales
+- [ ] Implementación del inicio de sesión
+- [ ] Desarrollo del dashboard de materias
+- [ ] Desarrollo del módulo de calificaciones
+- [ ] Desarrollo del módulo de servicio social y prácticas
+- [ ] Pruebas generales de navegación y funcionamiento
+
+---
+
+## Estructura del repositorio
+
+```text
+App-Kages/
+├── Diseño/
+│   └── .gitkeep
+├── Programacion/
+│   └── .gitkeep
+└── README
+```
+
+| Carpeta | Uso |
+| --- | --- |
+| Diseño | Bocetos, prototipos, pantallas, diagramas y recursos visuales |
+| Programacion | Código fuente, componentes, lógica y archivos de desarrollo |
+
+---
 
 ## Estado del proyecto
 
-Proyecto en etapa de planeacion y analisis.
+> Proyecto en etapa de planeación y análisis.
 
+La primera versión de KAGES se plantea como una aplicación de funcionamiento local orientada a organizar la información académica y profesional del alumno, priorizando una navegación clara y una consulta directa de materias, actividades, calificaciones y horas acumuladas.
