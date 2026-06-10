@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bloque Laberinto - Prototipo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="importmap">
+      { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+    </script>
+</head>
+<body>
+    <canvas id="game-canvas" aria-label="Tablero de juego 3D"></canvas>
+
+    <div id="ui-layer">
+        <div id="loading-screen" class="screen blur-bg">
+            <div class="loader"></div>
+            <h2 class="loading-text">INICIANDO SISTEMA</h2>
+        </div>
+
+        <div id="main-menu" class="screen blur-bg hidden">
+            <section class="panel menu-panel">
+                <p class="eyebrow">Prototipo jugable</p>
+                <h1 class="title">BLOQUE<span>LABERINTO</span></h1>
+                <div class="menu-options">
+                    <button id="btn-campaign" class="stone-btn">Jugar niveles</button>
+                    <button class="stone-btn neutral disabled" aria-disabled="true">Modo desafio</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="level-selector" class="screen blur-bg hidden">
+            <section class="panel levels-panel">
+                <div class="panel-heading">
+                    <p class="eyebrow">Campana</p>
+                    <h2 class="subtitle">Selecciona sector</h2>
+                </div>
+                <div class="level-cards-container" id="level-grid"></div>
+                <button id="btn-back-menu" class="stone-btn ghost">Volver al menu</button>
+            </section>
+        </div>
+
+        <div id="level-complete" class="screen blur-bg hidden">
+            <section class="panel result-panel">
+                <p class="eyebrow">Sector completado</p>
+                <h1 class="title small">Nivel superado</h1>
+                <div class="stars-container" aria-label="Calificacion">
+                    <span class="star" id="star-1">&#9733;</span>
+                    <span class="star" id="star-2">&#9733;</span>
+                    <span class="star" id="star-3">&#9733;</span>
+                </div>
+                <p id="final-stats" class="result-stats">Movimientos: 0 / Optimo: 0</p>
+                <div class="menu-options row">
+                    <button id="btn-menu-win" class="stone-btn ghost">Sectores</button>
+                    <button id="btn-next" class="stone-btn">Siguiente</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="pause-menu" class="screen blur-bg hidden">
+            <section class="panel pause-panel">
+                <p class="eyebrow">Juego detenido</p>
+                <h1 class="title small">Pausa</h1>
+                <div class="menu-options">
+                    <button id="btn-resume" class="stone-btn">Continuar</button>
+                    <button id="btn-restart-pause" class="stone-btn warning">Reiniciar</button>
+                    <button id="btn-quit" class="stone-btn danger">Salir</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="hud" class="screen hud-screen hidden">
+            <header class="hud-bar">
+                <div class="hud-panel" id="score-display">Movimientos: 0</div>
+                <div class="hud-actions">
+                    <button id="btn-restart-hud" class="icon-btn" aria-label="Reiniciar nivel">&#8635;</button>
+                    <button id="btn-pause" class="icon-btn" aria-label="Pausar">&#10074;&#10074;</button>
+                </div>
+                <div class="hud-panel" id="level-display">Sector 1</div>
+            </header>
+        </div>
+
+        <div id="touch-controls" class="touch-controls hidden" aria-label="Controles tactiles">
+            <button class="control-btn up" data-dir="UP" aria-label="Mover arriba">&uarr;</button>
+            <button class="control-btn left" data-dir="LEFT" aria-label="Mover izquierda">&larr;</button>
+            <button class="control-btn down" data-dir="DOWN" aria-label="Mover abajo">&darr;</button>
+            <button class="control-btn right" data-dir="RIGHT" aria-label="Mover derecha">&rarr;</button>
+        </div>
+
+        <div id="message-toast" class="toast hidden" role="status" aria-live="polite"></div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
